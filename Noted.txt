@@ -1,1 +1,116 @@
-JavaScript Object Oriented Programming
+                            JavaScript Object Oriented Programming
+
+
+
+PENGENALAN OBJECT ORIENTED PROGRAMMING 
+    - OOP adalah sudut pandang bahasa pemrograman yang berkonsep "object".
+    - Ada banyak sudut pandang bahasa pemrograman, namun OOP adalah yang sangat populer saat ini.
+    - Contoh lain sudut pandang bahasa pemrogramman, yaitu :
+        1. Functional Programing.
+        2. Prosedural atau imperatif programming.
+    - Ada beberapa istilah yang perlu dimengerti dalam OOP, yaitu : Object dan Class.
+
+    Apa Itu Object
+        - Object adalah data yang berisi field / properties / attributes dan method / function / behavior.
+
+    Apa itu Class
+        - Class adalah blueprint, prototype atau cetakan untuk membuat Object.
+        - Class berisikan deklarasi semua properties dan functios yang dimiliki oleh object.
+        - Setiap object selalu dibuat di Class.
+        - Dan sebuh class bisa membuat Object tanpa batas.
+
+    OOP di JavaScript
+    - JavaScript sendiri sebenarnya sejak awal dibuat sebagai bahasa prosedural, bukan bahasa pemrogramman berorientasi object.
+    - Oleh karna, implementasi OOP di Javascript memang tidak sedetail bahasa pemrogramman lain yang memang dari awal merupakan bahasa pemrograman OOP seperti Java atau C++. 
+
+
+MEMBUAT CONSTRUCTUR FUNCTION 
+    Membuat Object
+        - Sebenarnya kita sudah belajar tipe data object, dengan cara membuat variable dengan tipe data object.
+        - Namun pembuatan object menggunakan tipe data object, akan membuat object yang selalu unik, sedangkan dalam OOP, biasanya kita akan membuat class sebagai cetakan, sehingga bisa membuat object dengan karakteristik yang sama berkali-kali, tanpa harus mendeklarasikan object berkali-kali seperti menggunakan tipe data object.
+    
+    Membuat Consturctor Function 
+        - Sebelum EcmaScript versi 6, pembuatan class, biasanya menggunakan function. Hal ini dikarnakan sebenarnya JavaScript bukanlah bahasa pemrograman yang fokus ke OOP.
+        - Untuk membuat class di JS lama, kita bisa membuat function.
+        - Function ini kita sebut dengan Constructor Function.
+
+    Membuat Object dari Constuctor Function
+        - Setelah kita membuat class, jika kita ingin membuat object dari class tersebut, kita bisa menggunakan kata kunci new, lalu diikuti dengan nama constructor function nya.
+
+
+PROPERTY DI CONSTRUCTOR FUNCTION 
+    - Sebenarnya setelah kita membuat object, kita bisa dengan mudah menambahkan property ke dalam object tersebut hanya dengan menggunakan nama variable nya, diikuti tanda titik dan nama property.
+    - Namun jika seperti itu, alhasil, constructor function yang sudah kita buat tidak terlalu berguna, karna property nya hanya ada di object yang kita tambahkan property.
+    - Untuk menambahkan property di dalam semua object yang dibuat dari constructor function, kita bisa menggunakan kata kunci this lalu diikuti dengan nama property nya.
+
+
+METHOD DI CONSTRUCTOR FUNCTION 
+    - Sama seperti tipe data object biasanya, kita juga bisa menambahkan method di dalam constructor function.
+    - Jika kita tambahkan di constructor function, secara otomatis object yang di buat akan memiliki method tersebut.
+
+
+PARAMETER DI CONSTRUCTOR FUNCTION 
+    - Karna dalam JS, class adalah berbentuk fuunction, jadi secara default, function tersebut bisa memiliki parameter.
+    - Constructor function sama seperti function biasanya, bisa memiliki parameter, hal ini membuat ketika kita membuat object, kita bisa mengirim lansung data lewat parameter di constructor function tersebut.
+
+
+CONSTRUCTOR INHERITANCE 
+    - Dalam constructor kita biasanya membuat property baik itu berisi value ataupun function.
+    - Di dalam consturctor, kita bisa memanggil constructor lain, dengan begitu kita bisa mewwarisi semua property yang dibuat di constructor lain tersebut.
+    - Untuk memanggil constructor lain, kita bisa menggunakan Namaconstructor.call(this, prameter).
+
+
+PROTOTYPE 
+    - JS sebelumnya dikenal dengan pemrogramman berbasis prototype.
+    - Memang agak sedikit membingungkan, dan tidak dipungkiri, banyak sekali yang bingung dengan konsep prototype di JS.
+    - Pada chapter ini, kita akan bahas tentang konsep protype.
+
+    Protype Inheritance 
+    - Saat kita membuat object dari constructor function, object tersebut disebut instance, semua property(baik itu value ataupun method), akan berada di dalam instance objectnya.
+    - Saat kita membuat sebuah object instance, secara otomatis object tersebut adalah turunan dari Constructor.prototype nya.
+    - Untuk mengakses protype milih sebuah instance,kita bisa menggunakan __proto__
+
+    Menambahkan prototype ke prototype
+        - Property mirip object, dimana kita bisa menambah property baik itu value ataupun method.
+        - Saat kita menambah sebuah property ke prototype, secara otomatis, semua object instance yang turunan dari prototype tersebut akan memiliki property tersebut.
+
+    Cara kerja prototype Inheritance
+        - Bagaimana bisa property di prototype diakses dari object instance?
+        - Ketika kita mengakses property di object instance, pertama akan di cek apakah di object tersebut terdapat property tersebut atau tidak, jika tidak, maka akan di cek ke __proto__(prototype) nya, jika masih tidak ada, akan di cek lagi di __proto__(prototype) yang lebih tinggi, begitu seterusnya, sampai berakhir di object prototype.
+
+
+PROTOTYPE INHERITANCE 
+    - Sekarang kita sudah tahu, bahwa prototype selalu memiliki parent, artinya dia adalah turunan, parent tertinggi adalah object prototype.
+    - Pertanyaanya bagaimana jika kita ingin melakukan inheritance ke prototype lain ?
+    - Hal ini juga bisa dilakukan, namun agak sedikit tricky, karna hal ini, sebenarnya untuk JS medern, tidak direkomendasikan lagi praktek OOP menggunakan Prototype, karna di ES6 sudah dikenalkan kata kunci class yang akan nanti di bahas di chapter tersendiri.
+
+
+KATA KUNCI CLASS 
+    Membuat Class
+        - Sejak ES 6, diperkenalkan kata kunci baru, yaitu class, ini merupakan kata kuunci yang dignakan untuk membuat class di JS.
+        - Dengan kata kunci class, kita tidak perlu lagi menggunakan constructor function untuk membuat class.
+
+
+CONSTRUCTOR DI CLASS
+    - Karena bentuk constructor function mirip dengan function, jadi kita bisa menambah parameter pada constructor function, lantas bagaimana dengan class.
+    - Di class juga kita bisa menambah constructor, dimana dengan menggunakan constructor, kita juga bisa menambah parameter saat pertama kali membuat object nya.
+    - Untuk membuat constructor di class, kita bisa menggunakan kata kunci constructor.
+
+
+PROPERTY DI CLASS
+    - Sama seperti pada constructor function, dalam class pun kita bisa menambahkan property.
+    - Karna hasil akhirnya adalah sebuah object, jadi menambahkan property di class bisa juga dilakukan di instance object nya.
+
+
+METHOD DI CLASS
+    - Membuat method di class sebenarnya bisa dilakukan dengan cara seperti menambahkan method di constructor function.
+    - Namun, hal tersebut sebenarnya menambahkan method ke dalam instance object.
+    - Khusus untuk method sebaiknya kita enambahkan method ke dalam instance object.
+    - Untung nya di class, ada cara mudah menambahkan method dan secara otomatis ditambahkan ke prototype.
+
+
+CLASS INHERITANCE
+    - Sebelumnya kita sudah tahu bahwa prototype mendukung pewarisan, walaupun agak sedikit tricky cara pembuatannya.
+    - Untungnya itu diperbaiki di ES6 dengan fitur class nya.
+    - Sebuah class bisa melakukan pewarisan dari class lainnya dengan menggunakan kata kunci extends.
+    - Di JS, class inheritance sama seperti prototypr inhritsnce, hanya bisa memiliki satu parent class.
