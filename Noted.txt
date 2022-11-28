@@ -114,3 +114,75 @@ CLASS INHERITANCE
     - Untungnya itu diperbaiki di ES6 dengan fitur class nya.
     - Sebuah class bisa melakukan pewarisan dari class lainnya dengan menggunakan kata kunci extends.
     - Di JS, class inheritance sama seperti prototypr inhritsnce, hanya bisa memiliki satu parent class.
+
+
+SUPER CONSTRUCTOR
+    - Class inheritance sifatnya Prototype Inheritance.
+    - Bagaimana dengan constructor inheritance? Sebenarnya constructor inheritance hanyalah melakukan eksekusi constructor lain dengan tujuan agar property di constructor lain bisa ditambahkan ke instance object ini.
+    - Dalam kasus ini, jika kita ingin mencapai hasil yang sama, kita bisa menggunakan kata kunci super di dalam constructor.
+    - Kata kunci super digunakan untuk memanggil constructor super class.
+    - Jika di child class kita kita membuat constructor, maka kita wajib memanggil parent constructor, walaupun di parent tidak ada constructor.
+
+
+SUPER METHOD
+    - Selain digunakan untuk memanggil constructor milih parent class, kata kunci super juga bisa digunakan mengakses method parent class.
+    - Caranya bisa menggunakan super titik nama function nya.
+    - Dengan kata lain, super sebenarnya adalah reference ke parent prototype, mirip seperti __proto__.
+
+
+GRETTER DAN SETTER DI CLASS
+    - Class juga mendukung pembuatan getter dan setter.
+    - Perlu diingat, getter dan setter ini akan berada di prototype, bukan di instance object.
+
+
+CLASS FIELD 
+    - Biasanya, saat kita ingin menambahkan field (property yang berisi value), kita biasanya tambahkan di constructor.
+    - Namun, ada proposal di EcmaScript yang mengajukan pemmbuatan public class field ditempatkan diluar constructor, selevel dengan penempatan method.
+    - Proposal ini masih belum final, namun beberapa berowser sudah mendukung nya.
+
+    Public Class Field
+        - Dalam proposal tersebut juga disebutkan bahwa EcmaScript akan mendukung acces modifier public dan private.
+        - Public artinya bisa diakses dari luar class, dan private hanya bisa diakses dari dalam class saja.
+        - Private class field akan kita bahas di chapter selanjutnya.
+        - Untuk membuat public class field, kita bisa langsung buat nama field dengan value nya selevel dengan method.
+        - Jika kita tidak memasukan value ke dalam field tersebut, artinya field tersebut memiliki value undefiend.
+
+
+    Private class vield
+        - Secara default, saat kita menambahkan field, maka field tersebut bisa diakses dari manapun.
+        - Jika kita ingin membuat field yang bersifat private (hanya bisa diakses di dalam class), kita bisa menggunakan tanda# sebelumnya nama field nya.
+        - Ini dinamakan private class field, dan hanya bisa diakses dari class saja.
+
+
+PRIVATE METHOD 
+    - Sama seperti field, terdapat proposal juga untuk menambahkan fitur private method di EcmaScript.
+    - Dengan demikian, access modifier private juga bisa digunakan di method.
+    - Caranya sama, dengan menambahkan tanda # di awal method, maka secara otomatis method tersebut adalah private.
+    - Ingat fitur ini maih dalam tahapan, belum benar-benar menjadi standar EcmaScript, jadi mungkin tidak semua browser mendukung fitur ini.
+
+
+OPERATOR INSTANCEOF
+    - kadang ada kasus kita ingin mengecek apakah sebuah object merupakan instance dari class tertentu atau bukan.
+    - Kita tidak bisa menggunakan operator typeof, karna object dari class, jika kita gunakan operator typeof, hasilnya adalah "object".
+    - operator instanceof akan menghasilkan boolean, true jika benar object tersebut adalah instance object nya, atau false jika bukan.
+
+    Operator instance di class inheritance
+    -   Operator instanceof mendukung class inheritance, artinya instanceof juga bisa digunakan untuk mengecek, apakah sebuah object adalah instance dari class tertentu, atau turunan dari class tertentu? 
+
+
+STATIC CLASS FIELD
+    Kata Kunci Static 
+        - Static adalah kata kunci yang bisa kita tambahkan sebelum field atau method, biasanya ketika kita membuat field atau method, maka secara otomatis field akan menjadi property di instance object, dan method akan menjadi function di prototype.
+        - Jika kita tambahkan static, maka hal itu tidak terjadi.
+
+        Static Class Field
+            - Jika kita tambahkan static dalam class field, secara otomatis field tersebut bukan lagi milik instance object, melainkan milik class nya itu sendiri.
+            - Biasanya static digunakan jika kita ingin membuat utility field atau function.
+            - Cara mengakses static class field pun tidak lagi lewat object, melainkan lewat class nya.
+            Static class field bisa diartikan sifatnya global, tidak peduli diakses dimana atau siapa yang mengkases, hasilnnya akan sama.
+
+
+STATIC METHOD
+    - Kata kunci static juga tidak hanya bisa ditambahkan di field, tapi juga di method.
+    - Jika kita tambahkan di method, artinya method tersebut jadi milik class nya, bukan prototype.
+    - Dan untuk mengakses method tersebut, kita juga bisa lakukan seperti mengakses static class field.
