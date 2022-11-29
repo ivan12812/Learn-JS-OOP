@@ -186,3 +186,60 @@ STATIC METHOD
     - Kata kunci static juga tidak hanya bisa ditambahkan di field, tapi juga di method.
     - Jika kita tambahkan di method, artinya method tersebut jadi milik class nya, bukan prototype.
     - Dan untuk mengakses method tersebut, kita juga bisa lakukan seperti mengakses static class field.
+
+
+ERROR
+    - Saat membuat aplikasi, sudah tentu kita tidak akan terhindar dari yanng namannya error.
+    - Di JS, Error merupakan sesuatu yang sudah standar.
+    - Banyak sekali class error di JS, namun semua class error di JS selalu berjuang di class Error, artinya class Error adalah superclass untuk semua jenis error di JS.
+    - Conntoh class error yang terdapat di JS contohnya SyntaxError, TypeError, dan lain-lain.
+
+    Throw Error
+        - Saat kita membuat instance object dari class Error, tidak lantas otomatis terjadi error.
+        - Kita perlu memberitahu program kita, bahwa kita akan mentrigger sebuah error terjadi, atau istilahnya adalah melempar error (throw error).
+        - Untuk melempar error, kita bisa gunakan kata kunci throw, diikuti dengan instance object errornya.
+        - Jika terjadi error, maka otomatis kode program kita akan terhenti, dan kita bisa melihat detail errornya di console di aplikasi browser kita.
+
+
+ERROR HANDLING
+    - Saat terjadi eror di kode program JS, Kadang kita tidak ingin program kita berhenti.
+    - Di JS, kita bisa menangkap jika terjadi error.
+    - Kita bisa menggunakan try catch statement untuk menagkap error.
+    - Pada block try, kita akan mencoba mengakses kode program yang bisa menyebabkan error, dan jika terjadi error, block try akan berhenti dan otomatis masuk ke block catch.
+    - Jika tidak terjadi error, block catch tidak akan dieksekusi.
+
+    Kata Kunci Finally
+        - Kadang kita ingin melakukan sesuatu entah itu terjadi error ataupun tidak.
+        - Dalam try catch, kita bisa menambahkan block finally.
+        - Block finally ini akan selalu dieksekusi setelah try catch selesai, entah terjadi error atau tidak, block finally akan selalu dieksekusi.
+
+        Try Finally
+            - Kata kunci finally juga bisa digunakan tanpa perlu menggunakan catch.
+            - Biasanya ini digunakan dalam kasus tertentu.
+
+
+MEMBUAT CLASS ERROR MANUAL
+    - Walaupun JS sudah memiliki standard class error.
+    - Namun alangkah baiknya, kita membedakan tiap jenis error.
+    - Untuk membuat error sendiri secara manual sangatlah mudah, cukup membuat class turunan dari class Error.
+    - Dan jangan lupa tambahkan parameter message, agar bisa dikirimkan ke parameter di constructor class error.
+
+
+ITERABLE DAN ITERATOR
+    - Salah satu fitur terbaru di ES6 adalah iterable.
+    - Iterable adalah spesial object yang memiliki standarisasi
+    - Dengan mengikuti standarisasi iterable, secara otomatis kita bisa melakukan itersasi terdapat data tersebut dengan menggunakan perulangan for...of..
+    - Contohnya yang sudah mengikuti standarisasi iterable adalah string, array, object, dan lain-lain.
+
+    Cara kerja Iterable dan Iterator 
+        - Jika kita mengikuti kontrak iterable, maka object yang kita buat akan bisa dilakukan iterasi menggunakan for...of.
+        - Setiap kita melakukan perulangan, object iterator akan dibuat.
+        - Hal ini menjadi aman jika kita melakukan iterasi berulang-ulang, karna iterator baru akan dibuat terus menerus.
+
+
+MATERI SELANJUTNYA
+    - JS Standard Library
+    - JS Modules
+    - JS DOM 
+    - JS Async
+    - JS Web API 
